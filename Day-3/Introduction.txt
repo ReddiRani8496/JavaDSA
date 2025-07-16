@@ -1,0 +1,44 @@
+What is data structure?
+Data structure is way to store,manage data. So that data can be accessed easily.
+
+Time Complexity:
+
+1. Constant Time O(1)
+2. Logarthimic   O(log n)
+3. linear        O(n)
+4. linearthimic  O(nlogn)
+5. Quadratic     O(n^2)
+6. Exponential   O(2^n)
+7. Factorial     O(n!)
+
+
+Space TimeComplexity:
+Extra space taken to complete the program.
+
+What is algorithm?
+step-by-step approach or process to solve a problem or complete a task.
+
+Example:
+
+To Prepare Tea.
+
+-> Take bowl
+-> pour milk
+-> After burning milk add tea powder
+-> After some time add sugar
+-> Tea is ready
+
+
+Flow Chart:
+---------
+Pictorial representation of the problem is called flowchart.
+
+Oval -> start/end
+parallelogram -> input/output
+rectangle -> process
+diamond -> decision making
+arrows -> flow 
+
+Recursion:
+---------
+A method calling itself is called recursion.

@@ -1,0 +1,72 @@
+programming languages based on the abstraction:
+
+1. Low level -> Machine Code, binary Code, Assembly language
+
+2. High level -> Python, Java
+
+
+
+What is Programming Language?
+
+Ans: To communicate with a person we need a specific language, similarly to communicate with computers,
+programmers also need a language called programming language.
+
+It is a set of instructions written in any language.
+
+1.Machine Language:
+------------------
+-> Machine language is a type of low level language.
+-> It is a series of 0s and 1s
+-> No translation is needed.
+
+2. Assembly Language:
+---------------------
+-> It is a low level language it is designed for specific processors.
+-> It represents the set of instructions in a symbolic and human understandable form.
+-> It uses Assembler to convert Assembly language to Machine language.
+
+3. High Level Language:
+----------------------
+-> It uses compiler or interpreter to convert high level language to Machine Language.
+
+Types of programming language:
+-----------------------------
+1.Procedural Programming Language:
+--------------------------------
+-> List of instructions given to computer, what to do in step by step.
+-> It divides program into small procedures called routines or functions.
+-> It is also called structured programming.
+Ex: FORTAN, C
+
+2. Functional Programming Language:
+----------------------------------
+-> It is an approach for problem solving.
+-> It treats every computation as mathematical function.
+-> It allows you to write mathematical function, i.e., a function that takes n arguments and returns a value.
+Ex: Python, Haskel.
+
+3. Object Oriented Programming language:
+---------------------------------------
+-> Object Oriented programming is based on the objects, programs are divided into objects.
+-> It binds the related data and functions into an object and encourages the reuse of these objects within same program or different program.
+Example: Java
+
+
+4. Statically Typed Language:
+----------------------------
+-> Performs type checking at compile time.
+-> Declaration of datatype is compulsory.
+Example:
+------
+int a = 10;
+a = "abc"; // error it will allow only integer.
+
+5. Dynamically Typed Language:
+----------------------------
+-> Performs type checking at run time.
+-> no need to declare datatypes.
+Example:
+-------
+a=10;
+a="abc";
+

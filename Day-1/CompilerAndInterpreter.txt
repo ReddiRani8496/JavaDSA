@@ -1,0 +1,7 @@
+Compiler:
+-------
+A compiler translates the entire source code into object code at once, which is then saved as a file before execution. 
+
+Interpreter:
+-----------
+nterpreter translates and executes the source code line by line without saving it, which can make debugging easier as errors are identified and reported immediately.
