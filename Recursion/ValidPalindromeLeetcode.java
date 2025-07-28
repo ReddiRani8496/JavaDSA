@@ -1,7 +1,7 @@
 package Recursion;
 
 
-public class StringArrayPalindrome {
+public class ValidPalindromeLeetcode {
      public static void main(String[] args) {
         System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
     }
