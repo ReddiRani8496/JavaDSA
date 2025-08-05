@@ -1,0 +1,16 @@
+package Recursion.TypesOfRecursion;
+
+public class HeadRecursion {
+     public static void main(String[] args) {
+        int n = 5;
+        printNto1(n);
+    }
+
+    public static void printNto1(int n) {
+        if(n==0) return;
+
+        System.out.println(n);
+        printNto1(n-1);
+        
+    }
+}

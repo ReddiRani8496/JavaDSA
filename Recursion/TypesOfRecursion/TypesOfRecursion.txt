@@ -1,0 +1,11 @@
+There are two types of recursion:
+
+1. Direct recursion
+2. Indirect recursion
+
+1. Direct recursion: 
+
+a. tail recursion
+b. head recursion
+c. nested recursion
+d. tree recursion
