@@ -38,7 +38,7 @@ public class FindDuplicateElementInArray {
             element ^= arr[i];
         }
 
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 0; i <= arr.length-2; i++) {
             element ^= i;
         }
         return element;
