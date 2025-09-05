@@ -13,7 +13,10 @@ public class ArrayImplementation {
         myArray.printAll();
         myArray.reverse();
         myArray.printAll();
-        myArray.sort();
+        int[] arr = {1,2,3,4};
+        myArray.addAll(arr,3);
+        myArray.printAll();
+
     }
 }
 
@@ -144,9 +147,37 @@ class MyArray {
     public void intersection(int[] arr) {
         for (int i=0;i<arr.length;i++) {
             for (int j=0;j<items.length;j++) {
-                
+
             }
         }
     }
-}
 
+
+    public void clear() {
+        count = 0;
+    }
+
+    public void addAll(int[] arr) {
+        for (int ele : arr) {
+            insert(ele);
+        }
+    }
+
+    public void addAll(int[] arr, int index) {
+        int[] temp = new int[count-index];
+        int j = index;
+        for(int i=0;i<temp.length;i++) {
+            temp[i] = items[j++];
+        }
+
+        count = index;
+        for (int k : arr) {
+            insert(k);
+        }
+
+        for (int ele: temp) {
+            insert(ele);
+        }
+
+    }
+}
