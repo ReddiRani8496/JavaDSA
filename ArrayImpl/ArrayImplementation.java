@@ -1,4 +1,4 @@
-package ArrayImpl;
+
 
 import java.util.Arrays;
 
@@ -16,7 +16,9 @@ public class ArrayImplementation {
         int[] arr = {1,2,3,4};
         myArray.addAll(arr,3);
         myArray.printAll();
-
+        myArray.removeRange(0,4);
+        myArray.printAll();
+        myArray.ensureCapacity(50);
     }
 }
 
@@ -179,5 +181,37 @@ class MyArray {
             insert(ele);
         }
 
+    }
+
+    public void removeRange(int start,int end) {
+        if(start>=0 && start<count && end>=0 && end<=count && start<=end) {
+            for (int i = start; i < count - (end - start); i++) {
+                items[i] = items[i + (end - start)];
+            }
+            count -= (end - start);
+        } else throw new IllegalArgumentException();
+    }
+
+    public void trimToSize() {
+        if(count< items.length) {
+            int[] temp = new int[count];
+            for(int i=0;i<count;i++) {
+                temp[i] = items[i];
+            }
+
+            items = temp;
+
+        }
+    }
+
+    public void ensureCapacity(int capacity) {
+        while (items.length<capacity) {
+            int[] temp = new int[items.length*2];
+            for(int i=0;i<count;i++) {
+                temp[i] = items[i];
+            }
+
+            items = temp;
+        }
     }
 }
