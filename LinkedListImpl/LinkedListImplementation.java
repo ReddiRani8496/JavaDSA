@@ -1,5 +1,3 @@
-package LinkedListImpl;
-
 import java.util.Arrays;
 import java.util.Stack;
 
@@ -7,10 +5,13 @@ public class LinkedListImplementation {
     public static void main(String[] args) {
         MyLinkedList linkedList = new MyLinkedList();
         linkedList.insert(10);
-        linkedList.insert(20);
-        linkedList.insert(30);
-        linkedList.insert(40);
-        linkedList.insert(50);
+//        linkedList.insert(20);
+//        linkedList.insert(30);
+//        linkedList.insert(40);
+//        linkedList.insert(50);
+        linkedList.print();
+
+        linkedList.removeAt(0);
         linkedList.print();
 //        linkedList.removeLast();
 //        linkedList.print();
@@ -22,21 +23,22 @@ public class LinkedListImplementation {
 //        linkedList.print();
 //        linkedList.printMiddle();
        // System.out.println(linkedList.size());
-        System.out.println(linkedList.isEmpty());
-        linkedList.insertFirst(60);
-        linkedList.print();
-        linkedList.removeFirst();
-        linkedList.print();
-        linkedList.removeFirst();
-        linkedList.print();
-        System.out.println(linkedList.contains(40));
-        int[] res = linkedList.toArray();
-        System.out.println(Arrays.toString(res));
-        linkedList.print();
-        System.out.println(linkedList.getAtPosition(3));
-        System.out.println(linkedList.previousNode(linkedList.head.next).data);
+//        System.out.println(linkedList.isEmpty());
+//        linkedList.insertFirst(60);
+//        linkedList.print();
+//        linkedList.removeFirst();
+//        linkedList.print();
+//        linkedList.removeFirst();
+//        linkedList.print();
+//        System.out.println(linkedList.contains(40));
+//        int[] res = linkedList.toArray();
+//        System.out.println(Arrays.toString(res));
+//        linkedList.print();
+//        System.out.println(linkedList.getAtPosition(3));
+//        System.out.println(linkedList.previousNode(linkedList.head.next).data);
+//
+//        System.out.println(linkedList.getNextNode1(linkedList.head).data);
 
-        System.out.println(linkedList.getNextNode1(linkedList.head).data);
     }
 
 }
@@ -66,6 +68,31 @@ class MyLinkedList {
             current.next = node;
             tail = node;
         }
+    }
+
+    public void insertAt(int data, int index) {
+        Node node = new Node(data);
+
+        if(index == 0) {
+           node.next = head;
+           head = node;
+           return;
+        }
+
+        int i = 0;
+
+        Node current = head;
+
+        while (current!=null && i+1==index) {
+            current = current.next;
+            i++;
+        }
+
+        if(current==null) throw new ArrayIndexOutOfBoundsException();
+
+        node.next = current.next;
+        current.next = node;
+
     }
 
     public boolean isEmpty() {
@@ -118,24 +145,26 @@ class MyLinkedList {
         }
     }
 
-//    public void removeAt(int index) {
-//        if(isEmpty()) {
-//            throw new IllegalStateException();
-//        } else if(index==0) {
-//            removeFirst();
-//        } else {
-//            int i = 0;
-//            Node current = head;
-//            while (current!=null && (i+1)!=index) {
-//                i++;
-//                current = current.next;
-//            }
-//            if(i+1 == index) {
-//                Node temp = current.next.next;
-//                current.next = temp;
-//            }
-//        }
-//    }
+    public void removeAt(int index) {
+        if(isEmpty()) {
+            throw new IllegalStateException();
+        } else if(index==0) {
+            removeFirst();
+        } else {
+            int i = 0;
+            Node current = head;
+            while (current!=null && (i+1)!=index) {
+                i++;
+                current = current.next;
+            }
+            if(current==null || current.next==null) throw new ArrayIndexOutOfBoundsException();
+
+            else if(i+1 == index) {
+                current.next = current.next.next;
+
+            }
+        }
+    }
 
     public void reverse1() {
         if(isEmpty()) throw  new IllegalStateException();
@@ -324,5 +353,51 @@ class MyLinkedList {
         if(node == null) return null;
         return node.next;
     }
-}
 
+    public boolean loopExists() {
+        Node fast = head;
+        Node slow = head;
+        while (fast!=null && fast.next!=null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast==slow) return  true;
+        }
+        return false;
+    }
+
+    public Node findKthNodeFromStart(int k) {
+        int count = 1;
+        Node current = head;
+        while (current!=null && count<k) {
+            count++;
+            current = current.next;
+        }
+        if(current==null) throw new IllegalArgumentException();
+        return current;
+    }
+
+    public Node findKthNodeFromLast(int k) {
+        int count = 0;
+        Node current = head;
+
+        while (current!=null) {
+            count++;
+            current = current.next;
+        }
+        if(k<=0 || k>count) throw new IllegalArgumentException();
+
+        Node slow = head;
+        Node fast = head;
+        int i=0;
+        while (i<k) {
+            fast = fast.next;
+            i++;
+        }
+
+        while (fast!=null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+}
